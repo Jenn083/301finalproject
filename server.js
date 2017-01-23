@@ -24,8 +24,8 @@ app.get('/kingcounty/*', proxyKingCounty);
 function proxyKingCounty (request, response) {
   console.log('Routing King County request for', request.params[0]);
   (requestProxy({
-    url: ` https://data.kingcounty.gov/${request.params[0]}`,
-    headers: {Authorization: `token ${process.env.KINGCOUNTY_TOKEN}`}
+    url: `https://data.kingcounty.gov/${request.params[0]}`,
+    headers: {'X-App-Token': `token ${process.env.KINGCOUNTY_TOKEN}`}
   }))(request, response); //<--requestProxy is immediately invoked and returns a function
 }
 
