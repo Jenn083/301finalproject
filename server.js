@@ -3,8 +3,9 @@
 const pg = require('pg');
 const express = require('express');
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3000;
+const requestProxy = require('express-request-proxy'); // REVIEW: We've added a new package here to our requirements, as well as in the package.json
 const app = express();
+const PORT = process.env.PORT || 3000;
 const conString = process.env.DATABASE_URL || 'postgres://localhost:5432';
 
 app.use(bodyParser.json());
@@ -16,6 +17,18 @@ app.use(express.static('./public'));
 app.get('/', (request, response) => response.sendFile('index.html', {root: '.'}));
 app.get('/new', (request, response) => response.sendFile('new.html', {root: '.'}));
 
+
+// REVIEW: This is a new route that will utilize our middle man proxy.
+app.get('/github/*', proxyGitHub);
+
+// REVIEW: This is a new proxy method which acts as a 'middle man' (middleware) for our request.
+function proxyGitHub(request, response) {
+  console.log('Routing GitHub request for', request.params[0]);
+  (requestProxy({
+    url: `https://api.github.com/${request.params[0]}`,
+    headers: {Authorization: `token ${process.env.GITHUB_TOKEN}`}
+  }))(request, response); //<--requestProxy is immediately invoked and returns a function
+}
 
 
 // NOTE: Routes for making API calls to enact CRUD Operations on our database
