@@ -18,14 +18,14 @@ app.get('/', (request, response) => response.sendFile('index.html', {root: '.'})
 app.get('/new', (request, response) => response.sendFile('new.html', {root: '.'}));
 
 // REVIEW: This is a new route that will utilize our middle man proxy.
-app.get('/kingcounty/*', proxyKingCounty);
+app.get('/resource/*', proxyKingCounty);
 
 // REVIEW: This is a new proxy method which acts as a 'middle man' (middleware) for our request.
 function proxyKingCounty (request, response) {
   console.log('Routing King County request for', request.params[0]);
   (requestProxy({
-    url: `https://data.kingcounty.gov/${request.params[0]}`,
-    headers: {'X-App-Token': `token ${process.env.KINGCOUNTY_TOKEN}`}
+    url: `https://data.kingcounty.gov/resource/${request.params[0]}`,
+    headers: {Authorization: `token ${process.env.KINGCOUNTY_TOKEN}`}
   }))(request, response); //<--requestProxy is immediately invoked and returns a function
 }
 
