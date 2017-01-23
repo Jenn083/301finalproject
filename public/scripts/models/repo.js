@@ -6,12 +6,12 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    // TODO: How would you like to fetch your repos? Don't forget to call the callback.
-
+    // DONE: Refactor your ajax call to use the $.get method, and make a request to our new proxy route.
+    $.get('/github/user/repos?per_page=5&sort=updated') //remove .com!!
+    .then(data => repos.all = data, err => console.error(err)) // es6 syntax arrow functions
+    .then(callback);
   };
 
-  // REVIEW: Model method that filters the full collection for repos with a particular attribute.
-  // You could use this to filter all repos that have a non-zero `forks_count`, `stargazers_count`, or `watchers_count`.
   repos.with = attr => repos.all.filter(repo => repo[attr]);
 
   module.repos = repos;
