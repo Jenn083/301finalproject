@@ -17,16 +17,15 @@ app.use(express.static('./public'));
 app.get('/', (request, response) => response.sendFile('index.html', {root: '.'}));
 app.get('/new', (request, response) => response.sendFile('new.html', {root: '.'}));
 
-
 // REVIEW: This is a new route that will utilize our middle man proxy.
-app.get('/github/*', proxyGitHub);
+app.get('/resource/*', proxyKingCounty);
 
 // REVIEW: This is a new proxy method which acts as a 'middle man' (middleware) for our request.
-function proxyGitHub(request, response) {
-  console.log('Routing GitHub request for', request.params[0]);
+function proxyKingCounty (request, response) {
+  console.log('Routing King County request for', request.params[0]);
   (requestProxy({
-    url: `https://api.github.com/${request.params[0]}`,
-    headers: {Authorization: `token ${process.env.GITHUB_TOKEN}`}
+    url: `https://data.kingcounty.gov/resource/${request.params[0]}`,
+    headers: {Authorization: `token ${process.env.KINGCOUNTY_TOKEN}`}
   }))(request, response); //<--requestProxy is immediately invoked and returns a function
 }
 
