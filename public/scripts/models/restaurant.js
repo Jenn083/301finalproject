@@ -44,7 +44,7 @@
   restaurants.latLng = () => {
      return restaurants.all.map(function(element){
        console.log(element, 'hello');
-      return {'latitude': element.latitude, 'longitude': element.longitude, 'name': element.name};
+      return {lat: element.latitude, lng: element.longitude};
 
     })
   }
