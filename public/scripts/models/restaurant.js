@@ -37,7 +37,7 @@
     return restaurants.all.filter(function(element){
       let tempCityUpper = element.city.toUpperCase(); //toUpperCase because some cities were upper or lowercase, so depending on what the user input, it will return different results
       return tempCityUpper === `${city}`
-      //for example, 'SEATTLE' needs to be in CAPS
+      //e.g, SEATTLE' needs to be in CAPS
     })
   };
 
