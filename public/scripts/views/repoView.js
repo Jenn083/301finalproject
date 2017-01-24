@@ -1,7 +1,7 @@
 'use strict';
 
 (function(module) {
-  const repoView = {};
+  const restaurantView= {};
 
   const ui = function() {
     let $about = $('#about');
@@ -10,15 +10,15 @@
     $about.show().siblings().hide();
   };
 
-  const render = Handlebars.compile($('#repo-template').text());
+  const render = Handlebars.compile($('#restaurant-template').text());
 
-  repoView.index = function() {
+  restaurantView.index = function() {
     ui();
 
     $('#about ul').append(
-      repos.with('name').map(render)
+      restaurants.with('name').map(render)
     );
   };
 
-  module.repoView = repoView;
+  module.restaurantView= restaurantView;
 })(window);
