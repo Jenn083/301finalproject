@@ -41,6 +41,15 @@
     })
   };
 
+  restaurants.latLng = () => {
+     return restaurants.all.map(function(element){
+      return element.latitude,
+      element.longitude
+
+    })
+  }
+
+console.log(something 'string');
 
   restaurants.with = attr => restaurants.all.filter(repo => repo[attr]);
 
