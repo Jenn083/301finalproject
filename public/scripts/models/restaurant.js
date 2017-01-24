@@ -10,6 +10,7 @@
     this.violation_description=opts.violation_description;
     this.inspection_score=opts.inspection_score;
     this.inspection_date=opts.inspection_date;
+    restaurants.all.push(this);//doublecheck
   }
 
   const restaurants = {};

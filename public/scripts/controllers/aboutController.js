@@ -5,7 +5,7 @@
 
   aboutController.index = () => {
     $('#about').show().siblings().hide();
-    repos.requestRepos(repoView.index);
+    restaurants.requestRestaurant(restaurantView.index);
   };
 
   module.aboutController = aboutController;
