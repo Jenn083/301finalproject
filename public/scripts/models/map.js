@@ -8,7 +8,8 @@ var mapOptions = {
     position: google.maps.ControlPosition.RIGHT_CENTER
   }
 }
-
+function initMap() {
+  }
 var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 //Make the map responsive:
 
