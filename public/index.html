@@ -86,34 +86,34 @@
           </ul>
         </section>
       </section>
-      <section>
+      <div>
       <h3>My Google Maps Demo</h3>
       <div id="map"></div>
-      </section>
+    </div>
     </main>
     <footer>
       &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&callback=initMap" async defer>
-    </script>
-
     <!-- <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&v=3.exp&libraries=visualization">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&callback=initMap" async defer>
     </script> -->
+
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&v=3.exp&libraries=visualization">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
     <script src="/vendor/scripts/marked.js"></script>
     <script src="/vendor/scripts/page.js"></script>
 
-    <script src="/scripts/models/article.js"></script>
-    <script src="/scripts/views/articleView.js"></script>
-    <script src="/scripts/controllers/articleController.js"></script>
+    <script src="/scripts/models/map.js"></script>
+    <!-- <script src="/scripts/models/article.js"></script> -->
+    <!-- <script src="/scripts/views/articleView.js"></script>
+    <script src="/scripts/controllers/articleController.js"></script> -->
 
     <script src="/scripts/models/restaurant.js"></script>
     <script src="/scripts/views/restaurantView.js"></script>
     <script src="/scripts/controllers/aboutController.js"></script>
     <script src="/scripts/controllers/routes.js"></script>
-    <script src="map.js"></script>
   </body>
 </html>
