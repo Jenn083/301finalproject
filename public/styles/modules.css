@@ -1,5 +1,5 @@
 .site-header {
-  background: #FFEAAA;
+  background: #3D3D3D;
 }
 
 .heading-group-h1 {
@@ -56,6 +56,10 @@
   font-size: .8em;
   font-style: italic;
   color: #ccc;
+}
+
+.site-footer {
+  background: #3D3D3D;
 }
 
 @media only screen and (min-width: 640px) {
