@@ -12,9 +12,13 @@
   clear: both;
 }
 
-.heading-group-h1 {
-  max-width: 80%;
-}
+/*.heading-group-h1 {
+  max-width: 70%;
+}*/
+
+/*.footing-group {
+  max-width: 70%;
+}*/
 
 #filters select {
   width: 90%;
