@@ -35,7 +35,7 @@
 
       // restaurantView.markers.push(marker);
       google.maps.event.addListener(marker, 'click', function(){
-        document.getElementById("displayMarkerOptions").innerHTML = restaurants.all;
+        document.getElementById("displayMarkerOptions").innerHTML = Restaurant;
 
         console.log ('does this work?');
       })
