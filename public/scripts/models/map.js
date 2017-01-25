@@ -131,9 +131,10 @@ var styleArray = [
  });
 //After demoing that it works, add a marker!
 
-  var marker = new google.maps.Marker({
-    position: {lat: 47.618217, lng: -122.351832},
+  var marker = new google.maps.Marker(function(
+  {position: {lat: 47.618217, lng: -122.351832},
     map: map,
   });
+
   module.map = map;
 })(window);
