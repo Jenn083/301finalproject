@@ -11,7 +11,7 @@
     this.violation_description=opts.violation_description;
     this.inspection_score=opts.inspection_score;
     this.inspection_date=opts.inspection_date.split('T')[0]; //split at the T and take the first half;
-    restaurants.all.push(this);//doublecheck
+    restaurants.all.push(this);
   }
 
   const restaurants = {};
