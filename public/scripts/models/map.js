@@ -107,10 +107,11 @@ var styleArray = [
  });
 //After demoing that it works, add a marker!
 
-
 // var marker = new google.maps.Marker({
 //   position: {lat: longitude, lng: latitude},
 //   map: map,
 // });
+
+
   module.map = map;
 })(window);
