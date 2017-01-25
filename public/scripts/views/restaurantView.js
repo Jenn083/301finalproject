@@ -36,13 +36,13 @@
       });
 // +++++++++++++++++++++++++
 
-      markerOption.onclick = function() {myFunction()};
-      console.log ('this is onclick listener')
-
-      function myFunction() {
-        markerOption("displayMarkerOption").innerHTML = 'click on me';
-        console.log ('this display marker handler');
-        }
+      // markerOption.onclick = function() {myFunction()};
+      // console.log ('this is onclick listener')
+      //
+      // function myFunction() {
+      //   markerOption("displayMarkerOption").innerHTML = 'click on me';
+      //   console.log ('this display marker handler');
+      //   }
 
     });
   }
