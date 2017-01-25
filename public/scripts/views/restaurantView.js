@@ -32,10 +32,14 @@
       };
       console.log(markerOption);
       var marker = new google.maps.Marker(markerOption);
+
       // restaurantView.markers.push(marker);
       google.maps.event.addListener(marker, 'click', function(){
+        document.getElementById("displayMarkerOptions").innerHTML = restaurants.all;
+
         console.log ('does this work?');
       })
+
     });
   }
   module.restaurantView = restaurantView;
