@@ -86,8 +86,9 @@ var styleArray = [
     elementType: 'labels.text.stroke',
     stylers: [{color: '#17263c'}]
   }
-]
-  var mapOptions = {
+ ]
+
+ var mapOptions = {
     zoom: 15,
     styles: styleArray,
     center: new google.maps.LatLng(47.618217, -122.351832),
@@ -99,6 +100,7 @@ var styleArray = [
   }
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
 //Make the map responsive:
  google.maps.event.addDomListener(window, 'resize', function() {
    var center = map.getCenter();
@@ -106,6 +108,9 @@ var styleArray = [
    map.setCenter(center);
  });
 //After demoing that it works, add a marker!
+
+
+}
 
 // var marker = new google.maps.Marker({
 //   position: {lat: longitude, lng: latitude},

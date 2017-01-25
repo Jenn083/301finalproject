@@ -33,6 +33,17 @@
       console.log(markerOption);
       var marker = new google.maps.Marker(markerOption);
       // restaurantView.markers.push(marker);
+      });
+// +++++++++++++++++++++++++
+
+      markerOption.onclick = function() {myFunction()};
+      console.log ('this is onclick listener')
+
+      function myFunction() {
+        markerOption("displayMarkerOption").innerHTML = 'click on me';
+        console.log ('this display marker handler');
+        }
+
     });
   }
   module.restaurantView = restaurantView;
