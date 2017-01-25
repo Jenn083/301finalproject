@@ -87,30 +87,6 @@ var styleArray = [
     stylers: [{color: '#17263c'}]
   }
 ]
-  // var styleArray = [
-  //   {
-  //     featureType:"all",
-  //     stylers: [
-  //     {hue:"#00ffe6"},
-  //     {saturation:-20}
-  //     ]
-  //   },
-  //   {
-  //     featureType:"road",
-  //     elementType:"geometry",
-  //     stylers: [
-  //     {lightness: 100},
-  //     {visibility:"simplified"}
-  //     ]
-  //   },
-  //   {
-  //     featureType:"road",
-  //     elementType:"labels",
-  //     stylers: [
-  //     { visibility:"off"}
-  //     ]
-  //   }
-  // ];
   var mapOptions = {
     zoom: 15,
     styles: styleArray,
@@ -131,9 +107,10 @@ var styleArray = [
  });
 //After demoing that it works, add a marker!
 
-  var marker = new google.maps.Marker({
-    position: {lat: 47.618217, lng: -122.351832},
-    map: map,
-  });
+
+// var marker = new google.maps.Marker({
+//   position: {lat: longitude, lng: latitude},
+//   map: map,
+// });
   module.map = map;
 })(window);
