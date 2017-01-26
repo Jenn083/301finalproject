@@ -2,6 +2,7 @@
 
 const pg = require('pg');
 const express = require('express');
+const helper = require('sendgrid').mail //for our feedback form!
 const bodyParser = require('body-parser');
 const requestProxy = require('express-request-proxy'); // REVIEW: We've added a new package here to our requirements, as well as in the package.json
 const app = express();
@@ -29,6 +30,35 @@ function proxyKingCounty (request, response) {
   }))(request, response); //<--requestProxy is immediately invoked and returns a function
 }
 
+// // #########################################
+// var sender = $('#sender').val();
+// var feedbackContent = $('#feedbackContent').val();
+//
+// function sendFeedbackEmail(feedbackContent) {
+//     from_email = new helper.Email(sender)
+//     to_email = new helper.Email("code301project@gmail.com")
+//     subject = "Feedback Submitted"
+//     content = new helper.Content("text/plain", feedbackContent)
+//     mail = new helper.Mail(from_email, subject, to_email, content)
+//
+//
+//   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+//   var request = sg.emptyRequest({
+//       method: 'POST',
+//       path: '/v3/mail/send',
+//       body: mail.toJSON()
+//   });
+//
+//   sg.API(request, function(error, response) {
+//       console.log(response.statusCode)
+//       console.log(response.body)
+//       console.log(response.headers)
+//   })
+//   };
+//
+// sendFeedbackEmail(feedbackContent);
+//
+// // ########################
 
 // NOTE: Routes for making API calls to enact CRUD Operations on our database
 app.get('/articles/all', (request, response) => {
