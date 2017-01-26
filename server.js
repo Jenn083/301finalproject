@@ -30,147 +30,65 @@ function proxyKingCounty (request, response) {
   }))(request, response); //<--requestProxy is immediately invoked and returns a function
 }
 
-// // #########################################
-// var sender = $('#sender').val();
-// var feedbackContent = $('#feedbackContent').val();
-//
-// function sendFeedbackEmail(feedbackContent) {
-//     from_email = new helper.Email(sender)
-//     to_email = new helper.Email("code301project@gmail.com")
-//     subject = "Feedback Submitted"
-//     content = new helper.Content("text/plain", feedbackContent)
-//     mail = new helper.Mail(from_email, subject, to_email, content)
-//
-//
-//   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-//   var request = sg.emptyRequest({
-//       method: 'POST',
-//       path: '/v3/mail/send',
-//       body: mail.toJSON()
-//   });
-//
-//   sg.API(request, function(error, response) {
-//       console.log(response.statusCode)
-//       console.log(response.body)
-//       console.log(response.headers)
-//   })
-//   };
-//
-// sendFeedbackEmail(feedbackContent);
-//
-// // ########################
-
 // NOTE: Routes for making API calls to enact CRUD Operations on our database
-app.get('/articles/all', (request, response) => {
+app.get('/feedback/all', (request, response) => {
   let client = new pg.Client(conString);
 
   client.connect(err => {
     if (err) console.error(err);
     client.query(
-      `SELECT * FROM articles
-      INNER JOIN authors
-      ON articles.author_id=authors.author_id;`,
+      `SELECT * FROM feedback`,
       (err, result) => {
         if (err) console.error(err);
         response.send(result);
         client.end();
       }
     );
-  })
+  });
 });
 
-app.post('/articles/insert', (request, response) => {
+app.post('/feedback/insert', (request, response) => {
   let client = new pg.Client(conString);
-
   client.query(
-    'INSERT INTO authors(author, "authorUrl") VALUES($1, $2) ON CONFLICT DO NOTHING',
-    [request.body.author, request.body.authorUrl],
-    err => {
-      if (err) console.error(err);
-      queryTwo();
-    }
+    `INSERT INTO
+    feedback(author, message)
+    VALUES ($1, $2);`,
+    [
+      request.body.author,
+      request.body.message,
+    ]
   );
-
-  function queryTwo() {
-    client.query(
-      `SELECT author_id FROM authors WHERE author=$1`,
-      [request.body.author],
-      (err, result) => {
-        if (err) console.error(err);
-        queryThree(result.rows[0].author_id);
-      }
-    );
-  }
-
-  function queryThree(author_id) {
-    client.query(
-      `INSERT INTO
-      articles(author_id, title, category, "publishedOn", body)
-      VALUES ($1, $2, $3, $4, $5);`,
-      [
-        author_id,
-        request.body.title,
-        request.body.category,
-        request.body.publishedOn,
-        request.body.body
-      ]
-    );
-  }
 
   client.connect();
   response.send('insert complete');
 });
 
-app.put('/articles/update', (request, response) => {
+app.put('/feedback/update', (request, response) => {
   let client = new pg.Client(conString);
 
   client.query(
-    `SELECT author_id FROM authors WHERE author=$1`,
-    [request.body.author],
-    (err, result) => {
-      if (err) console.error(err);
-      queryTwo(result.rows[0].author_id);
-      queryThree(result.rows[0].author_id);
-    }
+    `UPDATE feedback
+    SET author=$1, message=$2,
+    WHERE feedback_id=$3;`,
+    [
+      request.body.author,
+      request.body.message,
+      request.body.feedback_id
+    ]
   );
-
-  function queryTwo(author_id) {
-    client.query(
-      `UPDATE authors
-      SET author=$1, "authorUrl"=$2
-      WHERE author_id=$3;`,
-      [request.author, request.authorUrl, author_id]
-    );
-  }
-
-  function queryThree(author_id) {
-    client.query(
-      `UPDATE articles
-      SET author_id=$1, title=$2, category=$3, "publishedOn"=$4, body=$5
-      WHERE article_id=$6;`,
-      [
-        author_id,
-        request.body.title,
-        request.body.category,
-        request.body.publishedOn,
-        request.body.body,
-        request.body.article_id
-      ]
-    );
-  }
 
   client.connect();
   response.send('insert complete');
 });
 
-app.delete('/articles/delete', (request, response) => {
+app.delete('/feedback/delete', (request, response) => {
   let client = new pg.Client(conString);
 
   client.connect(err => {
     if (err) console.error(err);
 
     client.query(
-      `DELETE FROM articles WHERE article_id=${request.body.article_id};`,
+      `DELETE FROM feedback WHERE feedback_id=${request.body.feedback_id};`,
       err => {
         if (err) console.error(err);
         client.end();
@@ -180,14 +98,14 @@ app.delete('/articles/delete', (request, response) => {
   response.send('Delete complete');
 });
 
-app.delete('/articles/truncate', (request, response) => {
+app.delete('/feedback/truncate', (request, response) => {
   let client = new pg.Client(conString);
 
   client.connect(err => {
     if (err) console.error(err);
 
     client.query(
-      'DELETE FROM articles;',
+      'DELETE FROM feedback;',
       err => {
         if (err) console.error(err);
         client.end();

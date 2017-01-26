@@ -1,5 +1,6 @@
 'use strict';
 
-page('/', articleController.index);
+page('/', homeController.index);
 page('/about', aboutController.index);
+page('/feedback', feedbackController.index);
 page();
