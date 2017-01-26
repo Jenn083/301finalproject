@@ -56,6 +56,7 @@
         content: restaurantInfo
       });
       var marker = new google.maps.Marker(markerOption);
+
       marker.addListener('click', () => {
         infowindow.open(map, marker);
       });
