@@ -1,10 +1,13 @@
-.site-header {
-  background: #3D3D3D;
+*{
+
 }
 
-.heading-group-h1 {
-  float: left;
-  padding: 0 0 .2em 1em;
+.body {
+  background: #425572;
+}
+.site-header {
+  background: #3D3D3D;
+
 }
 
 .icon-menu {
@@ -14,6 +17,7 @@
 
 .main-nav {
   padding: 0.1em;
+
 }
 
 .main-nav ul {
@@ -21,6 +25,7 @@
   padding: 0;
   list-style: none;
   clear: both;
+
 }
 
 .main-nav:hover ul {
@@ -28,10 +33,48 @@
 }
 
 .main-nav li {
+  margin-top: 5%
   margin-right: .4em;
   font-size: 1.5em;
+  font-variant: small-caps;
   padding: .5em .2em;
-  border-bottom: 1px solid #ccc;
+
+}
+
+.pre-footer {
+  margin-left: 10%;
+  margin-top:10%;
+  max-height: 10%;
+}
+
+.suggestionForm {
+  width: 87%;
+  margin-left: 4%;
+  border: none;
+}
+
+#feedback {
+  background-color: #3D3D3D;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 15px;
+}
+
+#feedback-title {
+  font-variant: small-caps;
+  font-size: 25px;
+}
+
+#feedbackContent {
+  font-size: 20px;
+}
+
+#name {
+  font-size: 20px;
+}
+
+#sender {
+  font-size: 20px;
 }
 
 #filters {
@@ -60,6 +103,7 @@
 
 .site-footer {
   background: #3D3D3D;
+
 }
 
 @media only screen and (min-width: 640px) {
@@ -69,15 +113,18 @@
 
   .main-nav {
     padding: .2em .2em .2em 2em;
+
   }
 
   .main-nav ul {
     display: block;
+
   }
 
   .main-nav ul li {
     display: inline;
     border-bottom: none;
+
   }
 
   .main-nav ul li:hover a {

@@ -1,5 +1,13 @@
 #map {
   margin: 10%;
   padding: 25% 0;
-  border: 10px solid green;
+  border: 10px;
+  border-radius: 15px;
+  height: 200px;
+}
+
+#mapTitle {
+  font-variant: small-caps;
+  margin: 10%;
+  font-size: 35px;
 }

@@ -19,6 +19,11 @@
             By <address><a href="{{authorUrl}}">{{author}}</a></address>
             {{publishStatus}}
           </div>
+
+          <audio controls autoplay class="audio">
+          <source src="images/inspectorgadget.mp3" type="audio/mpeg">
+          </audio>
+
         </header>
         <section class="article-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
@@ -37,41 +42,25 @@
       </li>
     </script>
 
+
   </head>
   <body>
     <header class="site-header clearfix">
       <section class="heading-group-h1">
-        <h1>
-          301 Final Project!
-        </h1>
-        <h2>The shocking power of static pages</h2>
+      <img src="images/test-logo.png" class="displayed">
+
       </section>
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul>
           <li class="tab" data-content="articles"><a href="/" class="icon-home"> Home</a></li>
           <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
-          <li><a href="http://twitter.com/brookr" target="_blank" class="icon-twitter3"> Twitter</a></li>
-          <li><a href="http://github.com/brookr" target="_blank" class="icon-github"> GitHub</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section id="articles" class="tab-content">
-        <div>
-          <ul id="filters">
-            <li>
-              <select id="author-filter">
-                <option value="">-- Filter by Authors --</option>
-              </select>
-            </li>
-            <li>
-              <select id="category-filter">
-                <option value="">-- Filter by Categories --</option>
-              </select>
-            </li>
-          </ul>
-        </div>
+
       </section>
       <section id="about" class="tab-content">
         <header>
@@ -87,16 +76,16 @@
         </section>
       </section>
       <div>
-      <h3>My Google Maps Demo</h3>
+      <h3 id="mapTitle">View Restaurant Health Code Ratings </Resta></h3>
       <div id="map"></div>
     </div>
       <div id="displayMarkerOptions" style="background-color:blue;">
       </div>
 
 <!-- ################################### -->
-    <h1>Send Us Feedback!</h1>
+    <h1 id="feedback-title">Share a Review</h1>
     <form id="feedback">
-      <fieldset>
+      <fieldset class="suggestionForm">
         <label>
           <input type="text" id="name" placeholder="Name" required>
         </label>
@@ -111,11 +100,16 @@
           <input type="text" id="message2" placeholder="Would you recommend the app to a friend?" required> -->
         </label>
       </fieldset>
+
     </form>
+    <div class="pre-footer">
+    </div>
 <!-- ##################################### -->
     </main>
     <footer class="site-footer">
-      &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
+      <section class="site-footer-text">
+        <p id="site-footer-text">&copy; 2015 Code Fellows | Static Blog | Happy Ipsum!</p>
+      </section>
     </footer>
     <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&callback=initMap" async defer>
