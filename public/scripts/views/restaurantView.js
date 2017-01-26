@@ -30,6 +30,12 @@
         map:map,
         address:data.address,
         animation: google.maps.Animation.DROP
+        // icon: {
+        //   url: `data:image/svg+xml;utf-8, \
+        //   <svg width="30" height="30" viewBox="0 0 30 30"> \
+        //         <rect width="30" height="30" fill="#008d46" />
+        //         </svg>`
+        // }
       };
       var restaurantInfo = `
         <div id="restaurantInfo">
