@@ -2,26 +2,22 @@
 
 const pg = require('pg');
 const express = require('express');
-const helper = require('sendgrid').mail //for our feedback form!
-const bodyParser = require('body-parser');
-const requestProxy = require('express-request-proxy'); // REVIEW: We've added a new package here to our requirements, as well as in the package.json
+const requestProxy = require('express-request-proxy');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const conString = process.env.DATABASE_URL || 'postgres://localhost:5432';
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 
-// NOTE: Routes for requesting HTML resources
+//Routes for requesting HTML resources
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 // app.get('/new', (request, response) => response.sendFile('new.html', {root: '.'}));
 
-// REVIEW: This is a new route that will utilize our middle man proxy.
+//This is a new route that will utilize our middle man proxy.
 app.get('/resource/*', proxyKingCounty);
 
-// REVIEW: This is a new proxy method which acts as a 'middle man' (middleware) for our request.
+//This is a new proxy method which acts as a 'middle man' (middleware) for our request.
 function proxyKingCounty (request, response) {
   console.log('Routing King County request for', request.params[0]);
   (requestProxy({
@@ -30,7 +26,7 @@ function proxyKingCounty (request, response) {
   }))(request, response); //<--requestProxy is immediately invoked and returns a function
 }
 
-// NOTE: Routes for making API calls to enact CRUD Operations on our database
+//Routes for making API calls to enact CRUD Operations on our database
 app.get('/feedback/all', (request, response) => {
   let client = new pg.Client(conString);
 
