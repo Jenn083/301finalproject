@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Inspector Restaurant</title>
+    <title>Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/map.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+
+    <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}}
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
 <!-- below is the handlebars for our restaurant project!! -->
     <script id="restaurant-template" type="text/x-handlebars-template">
       <li>
@@ -22,6 +36,7 @@
         <p>Inspection Date: {{inspection_date}}</p>
       </li>
     </script>
+
   </head>
   <body>
     <header class="site-header clearfix">
@@ -33,21 +48,39 @@
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul>
-          <li class="tab" data-content="home"><a href="/" class="icon-home">Home</a></li>
+          <li class="tab" data-content="articles"><a href="/" class="icon-home"> Home</a></li>
           <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
           <li class="tab" data-content="feedback"><a href="/feedback" class="icon-feedback"> Feedback</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section id="about" class="tab-content">
-        <header>
-          About Us
-        </header>
-        <section>
-          <img src="images/healthlegend.png">
-        </section>
+      <section id="articles" class="tab-content">
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="author-filter">
+                <option value="">-- Filter by Authors --</option>
+              </select>
+            </li>
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter by Categories --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
       </section>
+      <section id="about" class="tab-content">
+      
+        <section>
+        </section>
+
+      <div>
+      <h3>My Google Maps Demo</h3>
+      <div id="map"></div>
+    </div>
+
       <section id="home" class="home-content">
 
 
@@ -78,25 +111,33 @@
          </div>
          <div id="guestbook"></div>
       </section>
+
     </main>
     <footer class="site-footer">
       &copy;  2017 | Inspector Restaurant | Seattle, Wa
     </footer>
+    <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&callback=initMap" async defer>
+    </script> -->
+
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&v=3.exp&libraries=visualization">
     </script>
+  https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=
+AIzaSyBFxOt2QWSgFJnwWq35eSybx8DQ7eNirqs
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
+    <script src="/vendor/scripts/marked.js"></script>
     <script src="/vendor/scripts/page.js"></script>
 
-    <script src="/scripts/views/mapView.js"></script>
-    <script src="/scripts/controllers/homeController.js"></script>
+    <script src="/scripts/models/map.js"></script>
+    <!-- <script src="/scripts/models/article.js"></script> -->
+    <!-- <script src="/scripts/views/articleView.js"></script>
+    <script src="/scripts/controllers/articleController.js"></script> -->
 
     <script src="/scripts/models/restaurant.js"></script>
     <script src="/scripts/views/restaurantView.js"></script>
-
     <script src="/scripts/controllers/aboutController.js"></script>
-    <script src="/scripts/controllers/feedbackController.js"></script>
     <script src="/scripts/controllers/routes.js"></script>
   </body>
 </html>
