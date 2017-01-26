@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Blog</title>
+    <title>Inspector Restaurant</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -10,20 +10,6 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/map.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
-
-    <script id="article-template" type="text/x-handlebars-template">
-      <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
-        <header>
-          <h1>{{title}}</h1>
-          <div class="byline">
-            By <address><a href="{{authorUrl}}">{{author}}</a></address>
-            {{publishStatus}}
-          </div>
-        </header>
-        <section class="article-body">{{{body}}}</section>
-        <a href="#" class="read-on">Read on &rarr;</a>
-      </article>
-    </script>
 <!-- below is the handlebars for our restaurant project!! -->
     <script id="restaurant-template" type="text/x-handlebars-template">
       <li>
@@ -36,7 +22,6 @@
         <p>Inspection Date: {{inspection_date}}</p>
       </li>
     </script>
-
   </head>
   <body>
     <header class="site-header clearfix">
@@ -64,6 +49,12 @@
         </section>
       </section>
       <section id="home" class="home-content">
+
+        <div class="menu">
+          <select class="list">
+            <option value="all">King County Cities</option>
+          </select>
+        </div>
 
         <div class="display">
           <h3 id="mapTitle">View Restaurant Health Code Ratings</h3>
@@ -97,16 +88,11 @@
     <footer class="site-footer">
       &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
-    <!-- <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&callback=initMap" async defer>
-    </script> -->
-
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&v=3.exp&libraries=visualization">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
-    <script src="/vendor/scripts/marked.js"></script>
     <script src="/vendor/scripts/page.js"></script>
 
     <script src="/scripts/views/mapView.js"></script>
@@ -116,7 +102,7 @@
     <script src="/scripts/views/restaurantView.js"></script>
 
     <script src="/scripts/controllers/aboutController.js"></script>
-        <script src="/scripts/controllers/feedbackController.js"></script>
+    <script src="/scripts/controllers/feedbackController.js"></script>
     <script src="/scripts/controllers/routes.js"></script>
   </body>
 </html>
