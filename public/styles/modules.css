@@ -1,10 +1,13 @@
-.site-header {
-  background: #3D3D3D;
+*{
+
 }
 
-.heading-group-h1 {
-  float: left;
-  padding: 0 0 .2em 1em;
+.body {
+  background: #425572;
+}
+.site-header {
+  background: #3D3D3D;
+
 }
 
 .icon-menu {
@@ -14,6 +17,7 @@
 
 .main-nav {
   padding: 0.1em;
+
 }
 
 .main-nav ul {
@@ -21,6 +25,7 @@
   padding: 0;
   list-style: none;
   clear: both;
+
 }
 
 .main-nav:hover ul {
@@ -28,15 +33,122 @@
 }
 
 .main-nav li {
+  margin-top: 5%
   margin-right: .4em;
   font-size: 1.5em;
+  font-variant: small-caps;
   padding: .5em .2em;
-  border-bottom: 1px solid #ccc;
+
+}
+
+.list {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 40px;
+  font-size: 16px;
+
+}
+
+#restaurantInfo h1 {
+  font-size: 20px !important;
+  color: black;
+}
+
+.restaurantAddress {
+  color: black;
+  text-align: left;
+}
+
+.violationHistory {
+  color: black;
+  text-align: left;
+}
+
+.pre-footer {
+  margin-left: 10%;
+  margin-top:10%;
+  max-height: 10%;
+}
+
+.suggestionForm {
+  width: 87%;
+  margin-left: 4%;
+  border: none;
+}
+
+#form {
+  border: none;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+  /*background-color: #3D3D3D;*/
+  border-radius: 15px;
+}
+
+/*#feedback {
+
+  width: 80%;
+  margin-left: 10%;
+
+  margin-bottom: 10%;
+  margin-top: 10%;
+
+}*/
+
+#feedback h1 {
+  font-variant: small-caps;
+  font-size: 25px;
+  padding: 5%
+}
+
+#nameSender {
+  font-size: 16px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 10px;
+  width: 85%;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+  border-wi: 2px;
+
+}
+
+#feedbackContent {
+  font-size: 16px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 10px;
+  width: 85%;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+}
+
+#button {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+  padding-left: 3%;
+  padding-right: 3%;
+
+}
+
+#button:hover {
+  background-color: red;
+  border-color: red;
+  color: white;
 }
 
 #filters {
   padding: 0;
   list-style: none;
+}
+
+#feedbackSpacing {
+  padding: 5%;
+}
+#guestbook {
+
 }
 
 .template {
@@ -60,6 +172,7 @@
 
 .site-footer {
   background: #3D3D3D;
+
 }
 
 @media only screen and (min-width: 640px) {
@@ -69,15 +182,18 @@
 
   .main-nav {
     padding: .2em .2em .2em 2em;
+
   }
 
   .main-nav ul {
     display: block;
+
   }
 
   .main-nav ul li {
     display: inline;
     border-bottom: none;
+
   }
 
   .main-nav ul li:hover a {
