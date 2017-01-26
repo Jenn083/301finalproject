@@ -115,7 +115,7 @@
 
 .site-footer {
   background: #3D3D3D;
-  position:fixed;
+  position: relative;
   left:0px;
   bottom:0px;
   height:100px;
