@@ -7,13 +7,24 @@
   const render = Handlebars.compile($('#restaurant-template').text());
 
   restaurantView.index = function() {
-    restaurantView.markerMaker();
+    restaurantView.getLocation();//get all cities
+    restaurantView.markerMaker(restaurants.all);//populate all restaurants
   };
 
+  restaurantView.getLocation = () => {
+    restaurants.allCities().map((city) => {
+      $('.list').append(`<option value=${city}>${city}</option>`)
+    });
+  }
 
-  restaurantView.markerMaker = function() {
-    console.log('in markerMaker');
-    restaurants.all.forEach(function(data){
+  restaurantView.selectLocation = (city) => {
+    var selectRestaurantByCity = city === 'all'? restaurants.all : restaurants.selectCity(city);//get restaurant by city
+    restaurantView.markerMaker(selectRestaurantByCity);//pass in list of restaurants to map
+  }
+
+  restaurantView.markerMaker = function(restaurantList) {
+    var map = initMap();
+    restaurantList.forEach(function(data){
       var markerOption = {
         position: {lng:parseFloat(data.longitude), lat:parseFloat(data.latitude)},
         map:map,
