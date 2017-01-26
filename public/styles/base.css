@@ -5,6 +5,7 @@ img {
 body {
   line-height: 1.5;
   font-size: 100%;
+  text-align: center;;
   color: #313131;
 }
 
@@ -15,8 +16,9 @@ main {
 
 hr {
   margin: 1em;
-  width: 80%;
+  width: 10%;
 }
+
 
 /*TEXT STYLES
 =======================================*/
@@ -52,8 +54,6 @@ label {
 input {
   width: 100%;
   margin: .5em 0;
-  border: 1px solid #ccc;
-  border-width: 0 0 1px 0;
   border-radius: 0;
 }
 
@@ -67,14 +67,14 @@ textarea {
   width: 100%;
   margin: .5em 0;
   font-size: 2em;
-  border: 1px solid #ccc;
+
   border-radius: 0;
 }
 
 input:invalid, textarea:invalid {
-  border-color: #AE3F3C;
+
 }
 
 input:valid, textarea:valid {
-  border-color: #89CB8E;
+
 }
