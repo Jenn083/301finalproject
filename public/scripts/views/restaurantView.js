@@ -50,18 +50,10 @@
         content: restaurantInfo
       });
       var marker = new google.maps.Marker(markerOption);
-<<<<<<< HEAD
 
-      // restaurantView.markers.push(marker);
-      google.maps.event.addListener(marker, 'click', function(){
-        console.log ('does this work?');
-      })
-
-=======
       marker.addListener('click', () => {
         infowindow.open(map, marker);
       });
->>>>>>> 520c4b69b40aaf9ee79a237545cc71f04da30a71
     });
   }
   restaurants.requestRestaurant();

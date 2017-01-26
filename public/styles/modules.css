@@ -41,6 +41,25 @@
 
 }
 
+.list {
+  margin-top: 10%;
+}
+
+#restaurantInfo h1 {
+  font-size: 20px !important;
+  color: black;
+}
+
+.restaurantAddress {
+  color: black;
+  text-align: left;
+}
+
+.violationHistory {
+  color: black;
+  text-align: left;
+}
+
 .pre-footer {
   margin-left: 10%;
   margin-top:10%;
@@ -53,12 +72,20 @@
   border: none;
 }
 
-#feedback {
+#form {
+  border: none;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+}
+
+/*#feedback {
   background-color: #3D3D3D;
   width: 80%;
   margin-left: 10%;
   border-radius: 15px;
-}
+  margin-bottom: 10%;
+  margin-top: 10%;
+
+}*/
 
 #feedback-title {
   font-variant: small-caps;
@@ -69,7 +96,7 @@
   font-size: 20px;
 }
 
-#name {
+#nameSender {
   font-size: 20px;
 }
 
@@ -80,6 +107,14 @@
 #filters {
   padding: 0;
   list-style: none;
+}
+
+#button {
+
+}
+
+#guestbook {
+
 }
 
 .template {

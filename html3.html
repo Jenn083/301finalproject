@@ -19,7 +19,13 @@
             By <address><a href="{{authorUrl}}">{{author}}</a></address>
             {{publishStatus}}
           </div>
+
+          <audio controls autoplay class="audio">
+          <source src="images/inspectorgadget.mp3" type="audio/mpeg">
+          </audio>
+
         </header>
+
         <section class="article-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
@@ -41,9 +47,7 @@
   <body>
     <header class="site-header clearfix">
       <section class="heading-group-h1">
-
         <img src="images/test-logo.png" class="displayed">
-
       </section>
       <nav class="main-nav">
         <div class="icon-menu"></div>
@@ -51,6 +55,7 @@
           <li class="tab" data-content="home"><a href="/" class="icon-home">Home</a></li>
           <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
           <li class="tab" data-content="about"><a href="/feedback" class="icon-feedback"> Feedback</a></li>
+
         </ul>
       </nav>
     </header>
@@ -70,14 +75,14 @@
           </select>
         </div>
         <div class="display">
-          <h3 id="mapTitle">View Restaurant Health Code Ratings</h3>
+          <h3 id="mapTitle">View Restaurant Health Code Ratings </h3>
           <div id="map"></div>
         </div>
       </section>
       <section id="feedback" class="feedback">
         <h1>Send Us Feedback!</h1>
-        <form id="feedback1">
-          <fieldset id="form">
+        <form id="feedback">
+          <fieldset class="suggestionForm">
              <label>
                <input type="text" id="nameSender" placeholder="Name" required></input>
              </label>
@@ -88,9 +93,10 @@
          </form>
          <div id="guestbook"></div>
       </section>
+      <div class="pre-footer"></div>
     </main>
     <footer class="site-footer">
-      &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
+      <p id="site-footer-text">&copy; 2015 Code Fellows | Static Blog | Happy Ipsum!</p>
     </footer>
     <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&callback=initMap" async defer>
