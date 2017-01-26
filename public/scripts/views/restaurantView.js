@@ -36,11 +36,13 @@
       // restaurantView.markers.push(marker);
       google.maps.event.addListener(marker, 'click', function(){
         document.getElementById("displayMarkerOptions").innerHTML = this.restaurants;
-
+        console.log(marker.address);
         console.log ('does this work?');
       })
 
     });
   }
+  restaurants.requestRestaurant();
+
   module.restaurantView = restaurantView;
 })(window);

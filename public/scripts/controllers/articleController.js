@@ -8,6 +8,5 @@
     $('main > section').hide();
     $('#articles').show();
   };
-
   module.articleController = articleController;
 })(window);
