@@ -34,8 +34,10 @@
       var marker = new google.maps.Marker(markerOption);
 
       // restaurantView.markers.push(marker);
+      var markerMarkup = marker.address + '' + marker.city + '' + marker.name + ''+ marker.zip_code + '' + marker.longitude + '' + marker.latitude + '' + marker.violation_description + '' + marker.inspection_score + '' + marker.inspection_date;
       google.maps.event.addListener(marker, 'click', function(){
-        document.getElementById("displayMarkerOptions").innerHTML = this.restaurants;
+        document.getElementById("displayMarkerOptions").innerHTML = markerMarkup;
+
         console.log(marker.address);
         console.log ('does this work?');
       })
