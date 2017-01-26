@@ -19,7 +19,7 @@
   restaurants.all = [];
 
   restaurants.requestRestaurant = function(callback) {
-    $.get('https://data.kingcounty.gov/resource/gkhn-e8mn.json?$$app_token=9vDySgx7Ckb1nzJ38UuD02Hbw&$where=inspection_date%20between%20%272015-01-10T12:00:00%27%20and%20%272017-01-10T14:00:00%27&$limit=20')
+    $.get('https://data.kingcounty.gov/resource/gkhn-e8mn.json?$$app_token=9vDySgx7Ckb1nzJ38UuD02Hbw&$where=inspection_date%20between%20%272015-01-10T12:00:00%27%20and%20%272017-01-10T14:00:00%27&$limit=100')
     .then(data => data.forEach(restaurant => { new Restaurant(restaurant); }))
     .then(callback);
   };
@@ -33,10 +33,10 @@
     }, []);
   };
   //restaurants with the matched city --need to figure out how to pass in the city variable (what the user selects) to this code.
-  restaurants.selectCity = () => {
+  restaurants.selectCity = (city) => {
     return restaurants.all.filter(function(element){
       let tempCityUpper = element.city.toUpperCase(); //toUpperCase because some cities were upper or lowercase, so depending on what the user input, it will return different results
-      return tempCityUpper === `${city}`
+      return tempCityUpper === city.toUpperCase();
       //e.g, SEATTLE' needs to be in CAPS
     })
   };

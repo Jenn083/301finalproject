@@ -98,20 +98,17 @@ var styleArray = [
     }
   }
 
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-//Make the map responsive:
- google.maps.event.addDomListener(window, 'resize', function() {
-   var center = map.getCenter();
- google.maps.event.trigger(map, 'resize');
-   map.setCenter(center);
- });
-//After demoing that it works, add a marker!
+  var initMap = function() {
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    //Make the map responsive:
+    google.maps.event.addDomListener(window, 'resize', function() {
+      var center = map.getCenter();
+      google.maps.event.trigger(map, 'resize');
+      map.setCenter(center);
+    });
 
-// var marker = new google.maps.Marker({
-//   position: {lat: longitude, lng: latitude},
-//   map: map,
-// });
+    return map
+  }
 
-
-  module.map = map;
+  module.initMap = initMap;
 })(window);

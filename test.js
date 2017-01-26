@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 1. OnClick
 restaurantView.markerMaker = function() {
@@ -31,3 +32,8 @@ restaurantView.markerMaker = function() {
       markerOption("displayMarkerOption").innerHTML = restaurant.all;
       console.log ('this display marker handler');
       }
+=======
+google.maps.event.addListener(marker, 'click', function(){
+  console.log ('does this work?');
+})
+>>>>>>> 520c4b69b40aaf9ee79a237545cc71f04da30a71
