@@ -15,8 +15,8 @@ app.use(express.static('./public'));
 
 
 // NOTE: Routes for requesting HTML resources
-app.get('/', (request, response) => response.sendFile('index.html', {root: '.'}));
-app.get('/new', (request, response) => response.sendFile('new.html', {root: '.'}));
+app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
+// app.get('/new', (request, response) => response.sendFile('new.html', {root: '.'}));
 
 // REVIEW: This is a new route that will utilize our middle man proxy.
 app.get('/resource/*', proxyKingCounty);
