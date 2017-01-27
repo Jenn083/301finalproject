@@ -115,7 +115,7 @@
 
 .site-footer {
   background: #3D3D3D;
-  position: relative;
+  position: absolute;
   left:0px;
   bottom:0px;
   height:100px;
@@ -147,4 +147,12 @@
     color: #29506D;
   }
 
+  .site-footer {
+    background: #3D3D3D;
+    position: relative;
+    left:0px;
+    bottom:0px;
+    height:100px;
+    width:100%;
+  }
 }
