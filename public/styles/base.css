@@ -5,14 +5,11 @@ img {
 body {
   line-height: 1.5;
   font-size: 100%;
-  text-align: center;;
-  color: #313131;
+  text-align: center;
 }
 
 main {
-
   margin: auto;
-  width: 90%;
 }
 
 hr {
@@ -36,11 +33,11 @@ address {
 
 a, a:link, a:active {
   text-decoration: none;
-  color: #777;
+  color: #c3d3d2;
 }
 
 a:hover, a:focus {
-  color: #29506D;
+  color: #c6572b;
 }
 
 a:visited {

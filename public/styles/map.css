@@ -1,15 +1,20 @@
 #map {
-  margin: 10%;
+  margin-bottom: 7%;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
   padding: 25% 0;
-  border: 10px;
   border-radius: 15px;
   height: 200px;
-  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+  box-shadow: 0 0 1.3rem #0f4140;
 }
 
 
 #mapTitle {
   font-variant: small-caps;
-  margin: 10%;
+  margin-top: 7%;
+  margin-bottom: 3%;
   font-size: 35px;
+  text-shadow: 0 0 1.3rem #0f4140;
+  color: #222a29;
 }
