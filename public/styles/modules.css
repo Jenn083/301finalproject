@@ -16,6 +16,7 @@
   padding: 0;
   list-style: none;
   clear: both;
+
 }
 
 .main-nav:hover ul {
@@ -28,6 +29,7 @@
   font-size: 2em;
   font-variant: small-caps;
   padding: .5em .2em;
+  text-shadow: 0 0 1.3rem #0f4140;
 }
 
 .list {
@@ -40,6 +42,18 @@
   height: 40px;
   font-size: 16px;
 }
+
+.legened {
+  padding: 10%
+}
+
+img.legend {
+  width: 50%;
+
+  padding-bottom: 3%;
+}
+
+
 
 /*// On the Map // */
 
@@ -64,15 +78,36 @@
 
 }
 
-.team-photo {
-  width: 70%;
-  padding-top: 10%;
-  padding-bottom: 5%;
+.team-photo-spacing {
+  height: 100px;
+}
 
+.team-photo {
+  width: 50%;
+  box-shadow: 0 0 1.3rem #0f4140;
+}
+
+#about-text {
+  padding-bottom: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+#about-text h2 {
+  text-shadow: 0 0 1.3rem #0f4140;
+}
+
+#about-text a {
+  font-size: 16px;
+  text-align: left;
+  padding-bottom: 5%;
 }
 
 #about-text p {
   text-align: left;
+  font-size: 16px;
+  margin-right: 10%;
+
 }
 
 /*On the Form*/
@@ -88,8 +123,8 @@
   box-shadow: 0 0 1.3rem #0f4140;
   background-color: #484a49;
   border-radius: 15px;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #feedback h1 {
@@ -202,10 +237,4 @@
     width:100%;
   }
 
-}
-
-img.legend {
-  width: 50%;
-  margin-top: -30px;
-  padding-bottom: 40px;
 }
