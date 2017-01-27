@@ -6,8 +6,10 @@
   padding-top: 3%;
 }
 .site-header {
-  background: #000000;
+  /*background: #000000;*/
   box-shadow: 0 0 1.3rem #0f4140;
+  background-image: url("/images/brickwall.png");
+  background-repeat:repeat-x;
 }
 
 .main-nav ul {
@@ -49,7 +51,6 @@
 
 img.legend {
   width: 50%;
-
   padding-bottom: 3%;
 }
 
@@ -182,16 +183,6 @@ img.legend {
 }
 
 
-.site-footer {
-  background: #000000;
-  box-shadow: 0 0 1.3rem #0f4140;
-  position: absolute;
-  left:0px;
-  bottom:0px;
-  height:100px;
-  width:100%;
-}
-
 @media only screen and (min-width: 640px) {
   .icon-menu {
     display: none;
@@ -222,8 +213,10 @@ img.legend {
     position: relative;
     left:0px;
     bottom:0px;
-    height:100px;
+    height:150px;
     width:100%;
+    background-image: url("/images/brickwall.png");
+    background-repeat:repeat-x;
   }
 }
 
@@ -235,6 +228,8 @@ img.legend {
     bottom:0px;
     height:100px;
     width:100%;
+    background-image: url("/images/brickwall.png");
+    background-repeat:repeat-x;
   }
 
 }
