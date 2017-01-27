@@ -203,3 +203,9 @@
   }
 
 }
+
+img.legend {
+  width: 50%;
+  margin-top: -30px;
+  padding-bottom: 40px;
+}
