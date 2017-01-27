@@ -1,14 +1,22 @@
+.main {
+  color: #c3d3d2;
+}
 
+.displayed {
+  padding-top: 3%;
+}
 .site-header {
-  background: #3D3D3D;
+  background: #000000;
+  box-shadow: 0 0 1.3rem #0f4140;
 }
 
 .main-nav ul {
-  padding: 0.1em;
+  padding-bottom: 0.1em;
   display: none;
   padding: 0;
   list-style: none;
   clear: both;
+
 }
 
 .main-nav:hover ul {
@@ -18,21 +26,34 @@
 .main-nav li {
   margin-top: 5%
   margin-right: .4em;
-  font-size: 1.5em;
+  font-size: 2em;
   font-variant: small-caps;
   padding: .5em .2em;
+  text-shadow: 0 0 1.3rem #0f4140;
 }
 
 .list {
   border-radius: 5px;
   border-style: solid;
   border-width: 2px;
-  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+  box-shadow: 0 0 1.3rem #0f4140;
   padding-left: 10%;
   padding-right: 10%;
   height: 40px;
   font-size: 16px;
 }
+
+.legened {
+  padding: 10%
+}
+
+img.legend {
+  width: 50%;
+
+  padding-bottom: 3%;
+}
+
+
 
 /*// On the Map // */
 
@@ -51,6 +72,44 @@
   text-align: left;
 }
 
+/*On the About Page*/
+
+#about {
+
+}
+
+.team-photo-spacing {
+  height: 100px;
+}
+
+.team-photo {
+  width: 50%;
+  box-shadow: 0 0 1.3rem #0f4140;
+}
+
+#about-text {
+  padding-bottom: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+#about-text h2 {
+  text-shadow: 0 0 1.3rem #0f4140;
+}
+
+#about-text a {
+  font-size: 16px;
+  text-align: left;
+  padding-bottom: 5%;
+}
+
+#about-text p {
+  text-align: left;
+  font-size: 16px;
+  margin-right: 10%;
+
+}
+
 /*On the Form*/
 
 .suggestionForm {
@@ -61,16 +120,20 @@
 
 #form {
   border: none;
-  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
-  /*background-color: #3D3D3D;*/
+  box-shadow: 0 0 1.3rem #0f4140;
+  background-color: #484a49;
   border-radius: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #feedback h1 {
   font-variant: small-caps;
-  font-size: 25px;
+  font-size: 35px;
+  text-shadow: 0 0 1.3rem #0f4140;
   padding: 5%
 }
+
 
 #nameSender {
   font-size: 16px;
@@ -96,27 +159,33 @@
   border-radius: 5px;
   border-style: solid;
   border-width: 2px;
-  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+  box-shadow: 0 0 1.3rem #0f4140;
   padding-left: 3%;
   padding-right: 3%;
 
 }
 
 #button:hover {
-  background-color: #29506D;
-  border-color: #29506D;
+  background-color: #c6572b;
+  border-color: #c6572b;
   color: white;
 }
 
 #feedbackSpacing {
-  padding: 10%;
+  padding: 7%;
+}
+
+.comment h2, p {
+  font-size: 25px;
+  text-align: left;
+  margin-left: 10%;
 }
 
 
 .site-footer {
-  background: #3D3D3D;
-
-  position: relative;
+  background: #000000;
+  box-shadow: 0 0 1.3rem #0f4140;
+  position: absolute;
   left:0px;
   bottom:0px;
   height:100px;
@@ -148,10 +217,24 @@
     color: #29506D;
   }
 
+  .site-footer {
+    background: #000000;
+    position: relative;
+    left:0px;
+    bottom:0px;
+    height:100px;
+    width:100%;
+  }
 }
 
-img.legend {
-  width: 50%;
-  margin-top: -30px;
-  padding-bottom: 40px;
+@media only screen and (max-width: 639px) {
+  .site-footer {
+    background: #000000;
+    position: relative;
+    left:0px;
+    bottom:0px;
+    height:100px;
+    width:100%;
+  }
+
 }

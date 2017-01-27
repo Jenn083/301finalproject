@@ -42,11 +42,11 @@
   };
 
   Restaurant.prototype.position = function() {
-    return {lat: this.latitude, lng: this.longitude};
+    return {lat: this.latitude, lng: this.longitude};//?
   }
 
 
-  restaurants.with = attr => restaurants.all.filter(repo => repo[attr]);
+  restaurants.with = attr => restaurants.all.filter(repo => repo[attr]);//?
 
   module.restaurants = restaurants;
 })(window);

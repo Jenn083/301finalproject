@@ -92,7 +92,7 @@
   }
 
   var initMap = function() {
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);//?
     //Make the map responsive:
     google.maps.event.addDomListener(window, 'resize', function() {
       var center = map.getCenter();

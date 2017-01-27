@@ -3,15 +3,21 @@
 const pg = require('pg');
 const express = require('express');
 const requestProxy = require('express-request-proxy');
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const conString = process.env.DATABASE_URL || 'postgres://localhost:5432';
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 
 //Routes for requesting HTML resources
-app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
+app.get('/', (request, response) => response.sendFile('index.html', {root: './public'}));
+app.get('/about', (request, response) => response.sendFile('index.html', {root: './public'}));
+app.get('/feedback', (request, response) => response.sendFile('index.html', {root: './public'}));
 // app.get('/new', (request, response) => response.sendFile('new.html', {root: '.'}));
 
 //This is a new route that will utilize our middle man proxy.
