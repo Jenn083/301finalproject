@@ -24,10 +24,11 @@
     </script>
   </head>
   <body>
+  <!-- <main> -->
     <header class="site-header clearfix">
       <section class="heading-group-h1">
 
-        <img src="images/test-logo.png" class="displayed">
+        <img src="images/newfinallogo.png" class="displayed">
 
       </section>
       <nav class="main-nav">
@@ -41,9 +42,37 @@
     </header>
     <main>
       <section id="about" class="tab-content">
-        <header>
-          About Us
-        </header>
+      <div class "team-photo-spacing" style="height: 100px;">
+          </div>
+
+        <img src="/images/teamfinal.png" class="team-photo">
+
+        <section id="about-text">
+
+          <h2>Shelly</h2>
+            <p>Shelly grew up in Austin, Texas, the land of live music, breakfast tacos, and BBQ. When she is not spending all her time learning to code, she enjoys running, drinking coffee, and exploring Seattle. She wants to write better code and continue to learn how to build things. </p>
+          <a href="http://github.com/shellytang">Git Hub</a>
+
+
+         <h2>Alison</h2>
+           <p>Alison spends her time at the intersection of art, technology and social change. She grew up in Seattle and spent the past ten years in Israel and Palestine trying to solve the Middle East conflict. After making little progress, she returned to Seattle to spend time with her mother, the Salish Sea and what is left of the forest. As a creative person with an insatial appetitie for new skills, coding is a natural artistic and professional progression for Alison. </p>
+         <a href="http://www.github.com/alisonramer">Git Hub</a>
+
+
+
+          <h2>Jennifer</h2>
+           <p>Jennifer has a bachelor’s degree from the University of Washington in Biology and Speech/Hearing Sciences. She is into all things health and fitness, including yoga and meditation. She enjoys traveling and the great outdoors. Currently, Code Fellows is taking over her life and coding is becoming an interest of hers. </p>
+           <a href="mailto:nguyenj1203@gmail.com">nguyenj1203@gmail.com</a>
+
+
+         <h2>Darcy</h2>
+           <p>Darcy McCabe- left America for Taiwan after finishing school. She lived there for about 5 years, teaching English, learning Mandarin and managing an arts co-op. Afterward she worked at the Shanghai Art Museum before returning to the US. Unsure of her next career move after Art Administration, she worked various odd jobs before deciding to get serious about learning how to code. Some of these jobs have included: Call (center) girl, Standardized Test Scorer, and (my favorite) Laser Quest Adventure Zombie </p>
+         <a href="http://github.com/darms">Git Hub</a>
+
+
+
+ </section>
+
         <section>
           <img src="">
         </section>
@@ -53,8 +82,10 @@
 
 
         <div class="display">
-          <h3 id="mapTitle">View Restaurant Health Code Ratings</h3>
+
+          <h3 id="mapTitle"> Restaurant Health Code Ratings</h3>
           <img src="images/healthlegend.png" class="legend"></img>
+
           <!-- <div class="menu"> -->
           <div class="menu">
             <select class="list">
@@ -65,6 +96,9 @@
 
           <div id="map"></div>
         </div>
+
+        <!-- feedback form -->
+
       </section>
       <section id="feedback" class="feedback">
         <h1>Send Us Feedback!</h1>
@@ -78,13 +112,20 @@
              <button type="submit" id="button">Submit</button>
            </fieldset>
          </form>
+
+         <div id="guestbook"></div>
          <div id="feedbackSpacing">
          </div>
-         <div id="guestbook"></div>
+       </form>
+
       </section>
     </main>
     <footer class="site-footer">
       &copy; 2017 | Inspector restaurant | Seattle, WA
+
+      <audio autoplay>
+      <source src="images/inspectorgadget.mp3">
+</audio>
     </footer>
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR7X5tPxOOV_hOyMqIcClUoQ5iXmdmys&v=3.exp&libraries=visualization">
